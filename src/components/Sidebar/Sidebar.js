@@ -22,7 +22,7 @@ const Sidebar = () => {
         <ImCancelCircle size={24} />
       </button>
 
-      {/* Internal content of side bar is here */}
+      {/* Internal content of side bar is here, list of categories*/}
       <div className="side-content">
         <ul className="side-nav">
           {categories.map(category => (
@@ -33,6 +33,10 @@ const Sidebar = () => {
                 onClick={() => closeSidebar()}
                 >
                   {category.strCategory}
+
+
+
+
                 </Link>
             </li>
           ))}
