@@ -12,6 +12,12 @@ const initialState = {
     categoryMeals: [],
     categoryMealsLoading: false,
     categoryMealsError: false,
+    meals: [],
+    mealsLoading: false,
+    mealsError: false,
+    meal: [],
+    mealLoading: false,
+    mealError: false
 }
 
 // creating the context
