@@ -27,7 +27,6 @@ const CategoryList = ({categories}) => {
           }
         </section>
       </div>
-
     </div>
   )
 }

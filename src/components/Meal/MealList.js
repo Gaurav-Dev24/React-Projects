@@ -31,8 +31,7 @@ const MealList = ({ meals }) => {
             })
           }
         </section>
-      </div>
-                   
+      </div>          
     </div>
   )
 }

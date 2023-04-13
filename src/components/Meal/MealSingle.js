@@ -10,8 +10,10 @@ import { AiOutlineCheckSquare } from 'react-icons/ai';
 const MealSingle = ( {meal} ) => {
  console.log(meal);
  let tags = meal?.tags?.split(',');
+ console.log(meal);
  let instructions = meal?.instructions?.split('\r\n');
- instructions = instructions?.filter(instructions => instructions.length > 1);
+ instructions = instructions?.filter(instruction => instruction.length > 1);
+
   return (
     <div className='section-wrapper'>
       <div className='container'>
@@ -42,7 +44,7 @@ const MealSingle = ( {meal} ) => {
               <h3 className='title text-orange'>{meal?.title}</h3>
               <div className='py-4'>
                 <div className='category flex align-center'>
-                  <span className='text-uppercase fw-8 ls-1 my-1'>category: &nbsp; </span>
+                  <span className='text-uppercase fw-8 ls-1 my-1'>category: &nbsp;</span>
                   <span className='text-uppercase ls-2'>{meal?.category}</span>
                 </div>
 
@@ -69,11 +71,12 @@ const MealSingle = ( {meal} ) => {
                 <h6 className='fs-16 text-white'>Ingredients</h6>
                 <ul className='grid'>
                   {
-                    meal?.ingredients?.map((ingredients, idx) => (
+                    meal?.ingredients?.map((ingredient, idx) => (
                     <li key = {idx} className='flex align-center'>
                       <span className='li-dot'>{idx + 1}</span>
-                      <span className='text-capitalize text-white fs-15'>{ingredients}</span>
-                    </li>))
+                      <span className='text-capitalize text-white fs-15'>{ingredient}</span>
+                    </li>
+                    ))
                   }
                 </ul>
               </div>
@@ -82,7 +85,7 @@ const MealSingle = ( {meal} ) => {
 
           <div className='details-body'>
             <div className='measures my-4'>
-              <h6 className='fs-16'>Measures:</h6>
+              <h6 className='fs-16'>Measure:</h6>
               <ul className='grid'>
                 {
                   meal?.measures?.map((measure,idx) => (
@@ -113,7 +116,6 @@ const MealSingle = ( {meal} ) => {
           </div>
         </section>
       </div>
-        
     </div>
   )
 }

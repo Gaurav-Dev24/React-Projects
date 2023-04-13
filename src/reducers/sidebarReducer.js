@@ -30,9 +30,5 @@ const sidebarReducer = (state, action) => {
                 return state;
     }
 }
-
-
-
-
 // exporting the function
 export default sidebarReducer;

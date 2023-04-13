@@ -9,7 +9,7 @@ import Loader from '../../components/Loader/Loader';
 
 const MealDetailsPage = () => {
   const {id} = useParams();
-  console.log(id);
+  // console.log(id);
   const { categories, dispatch, meal, categoryLoading, mealLoading } = useMealContext();
 
   useEffect( () => {
@@ -24,8 +24,10 @@ const MealDetailsPage = () => {
       }
 
       if(props.includes('strMeasure')){
-        if(meal[0][props].length > 1){
-          measuresArr.push(meal[0][props]);
+        if(meal[0][props]){
+          if(meal[0][props].length > 1){
+            measuresArr.push(meal[0][props]);
+          }
         }
       }
     }
@@ -44,7 +46,7 @@ const MealDetailsPage = () => {
     }
   }
 
-  console.log(ingredientsArr, measuresArr);
+  // console.log(ingredientsArr, measuresArr);
   return (
     <main className='main-content bg-whitesmoke'>
       { (mealLoading) ? <Loader/> : <MealSingle meal = {singleMeal} /> }
